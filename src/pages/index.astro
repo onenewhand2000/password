@@ -1,0 +1,33 @@
+---
+import LoginForm from "../components/LoginForm.svelte";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>登入</title>
+    <style is:global>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @layer components {
+        .c-input-text {
+          @apply rounded-full border-2 border-neutral-600 bg-transparent px-5 py-3 text-neutral-300 placeholder-neutral-500 outline-none transition-[border-color] hover:border-neutral-300 focus:border-neutral-400 focus:hover:border-neutral-300;
+        }
+
+        .c-input-button {
+          @apply rounded-full border-2 border-neutral-600 bg-transparent px-5 py-3 text-neutral-300 placeholder-neutral-500 transition-[border-color] hover:border-neutral-300;
+        }
+      }
+    </style>
+  </head>
+  <body class="h-[100vh] bg-neutral-900 text-white">
+    <div class="flex h-full items-center justify-center">
+      <LoginForm client:load />
+    </div>
+  </body>
+</html>
